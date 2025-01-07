@@ -1,0 +1,5 @@
+all:
+  hosts:
+    host1:
+      ansible_host: 20.254.186.190
+      ansible_user: aditya
