@@ -1,6 +1,6 @@
 all:
   hosts:
-    host3:
+    host4:
       ansible_host: 10.0.0.10
       ansible_user: aditya
 
