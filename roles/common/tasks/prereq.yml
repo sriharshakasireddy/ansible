@@ -15,7 +15,7 @@
 
 - name: Remove application zip file
   ansible.builtin.file:
-      path: "/tmp/{{ comp_name }}.zip"
+      path: "{{ comp_name }}.zip"
       state: absent
 
 - name: Unarchive a file that needs to be downloaded
