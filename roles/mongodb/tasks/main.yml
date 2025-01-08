@@ -13,11 +13,11 @@
   ansible.builtin.replace:
     path: /etc/mongod.conf
     regexp: '127.0.0.1'
-    replace: '0.0.0.0'
+    replace: '0.0.0.0'n
 
 
-- name: restart mongodb
+- name: restart mongod
   ansible.builtin.systemd_service:
     state: restarted
-    name: mongodb
+    name: mongod
     enabled: true
