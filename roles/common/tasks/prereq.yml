@@ -14,11 +14,6 @@
     path: /app
     state: directory
 
-- name: Remove application zip file
-  ansible.builtin.file:
-      path: "{{ comp_name }}.zip"
-      state: absent
-
 - name: Unarchive a file that needs to be downloaded
   ansible.builtin.unarchive:
     src: https://roboshop-artifacts.s3.amazonaws.com/{{ comp_name }}-v3.zip
