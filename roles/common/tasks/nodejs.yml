@@ -1,0 +1,20 @@
+  NODEJS()
+    {
+      
+      echo disbale nodejs
+      dnf module disable nodejs -y >$log_file
+      Status_Print
+      echo enabale nodejs
+      dnf module enable nodejs:20 -y >$log_file
+      echo $?
+      echo Install nodejs
+      dnf install nodejs -y >$log_file
+      Status_Print $?
+      
+      
+      PreReq
+      npmi
+      System_setUp
+    
+    }
+
