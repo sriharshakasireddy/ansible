@@ -4,4 +4,8 @@ all:
       ansible_host: 10.0.0.5
       ansible_user: aditya
 
+    host2:
+      ansible_host: 10.0.0.8
+      ansible_user: aditya
+
 
