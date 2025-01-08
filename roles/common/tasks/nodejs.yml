@@ -1,3 +1,32 @@
-- name: HI
-  ansible.builtin.debug:
-    msg: Hello
+
+
+  - name: Disable nodejs
+    ansible.builtin.shell: dnf module disable nodejs -y
+
+  - name: enable nodejs
+    ansible.builtin.shell: dnf module enable nodejs:20 -y
+
+  - name: Install nodejs
+    ansible.builtin.dnf:
+      name: nodejs
+      state: latest
+
+  - name: Run tasks from prereq
+    ansible.builtin.include_role:
+      name: common
+      tasks_from: prereq
+
+  - name: Run tasks from npm
+    ansible.builtin.include_role:
+      name: common
+      tasks_from: npm
+
+  - name: Run tasks from systemsetup
+    ansible.builtin.include_role:
+      name: common
+      tasks_from: systemsetup
+
+
+
+
+

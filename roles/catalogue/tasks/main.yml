@@ -2,3 +2,21 @@
   ansible.builtin.include_role:
     name: common
     tasks_from: nodejs
+
+
+- name: Copy file repo
+  ansible.builtin.copy:
+    src: mongo.repo
+    dest: /etc/yum.repos.d/mongo.repo
+
+
+- name: Install mongodb-mongosh
+  ansible.builtin.dnf:
+    name: mongodb-mongosh
+    state: latest
+
+- name: Load Master data
+  community.mongodb.mongodb_shell:
+    login_host: 10.0.0.8
+    file: "/app/db/master-data.js"
+    idempotent: yes
