@@ -1,19 +1,4 @@
-- name: Find all processes running as roboshop
-  ansible.builtin.shell: "ps -u roboshop -o pid="
-    register: roboshop_processes
-    ignore_errors: true
 
-- name: Kill any running processes for roboshop user
-  ansible.builtin.shell: "kill -9 {{ item }}"
-      with_items: "{{ roboshop_processes.stdout_lines }}"
-      when: roboshop_processes.stdout_lines | length > 0
-      ignore_errors: true
-
-    - name: Remove roboshop user and home directory
-      ansible.builtin.user:
-        name: roboshop
-        state: absent
-        remove: yes
 
 - name: Add roboshopuser
   ansible.builtin.user:
