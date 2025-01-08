@@ -1,3 +1,8 @@
+- name: Remove roboshop user and home directory
+  ansible.builtin.user:
+    name: roboshop
+    state: absent
+    remove: yes
 
 - name: Add roboshopuser
   ansible.builtin.user:
