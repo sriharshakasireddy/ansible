@@ -13,6 +13,10 @@
     path: /app
     state: directory
 
+- name: Remove application zip file
+  ansible.builtin.file:
+      path: "/tmp/{{ comp_name }}.zip"
+      state: absent
 
 - name: Unarchive a file that needs to be downloaded
   ansible.builtin.unarchive:
