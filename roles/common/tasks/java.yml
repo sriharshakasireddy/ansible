@@ -1,6 +1,6 @@
 - name: Install maven
   ansible.builtin.dnf:
-    name: mysql
+    name: maven
     state: latest
 
 - name: Run tasks prereq
