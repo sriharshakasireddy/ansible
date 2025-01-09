@@ -1,7 +1,7 @@
 all:
   hosts:
     host6:
-      ansible_host: 10.0.0.12
+      ansible_host: 10.0.0.10
       ansible_user: aditya
 
 
