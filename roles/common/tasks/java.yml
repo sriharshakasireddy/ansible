@@ -1,0 +1,20 @@
+- name: Install maven
+  ansible.builtin.dnf:
+    name: mysql
+    state: latest
+
+- name: Run tasks prereq
+  ansible.builtin.include_role:
+    name: common
+    tasks_from: prereq
+
+
+- name: set password
+  ansible.builtin.shell:  mvn clean package ;  mv target/{{ comp_name }}-1.0.jar {{ comp_name }}.jar
+  args:
+    chdir: /app
+
+- name: Run tasks systemsetup
+  ansible.builtin.include_role:
+    name: common
+    tasks_from: systemsetup
