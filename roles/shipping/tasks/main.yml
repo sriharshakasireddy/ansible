@@ -15,7 +15,7 @@
     target: /app/db/schema.sql
     login_host: 10.0.0.12
     login_user: root
-    login_password: roboshop@1
+    login_password: Roboshop@1
 
 - name: Load app-user
   community.mysql.mysql_db:
@@ -24,7 +24,7 @@
     target: /app/db/app-user.sql
     login_host: 10.0.0.12
     login_user: root
-    login_password: roboshop@1
+    login_password: Roboshop@1
 
 - name: Load master-data
   community.mysql.mysql_db:
@@ -33,5 +33,5 @@
     target: /app/db/master-data.sql
     login_host: 10.0.0.12
     login_user: root
-    login_password: roboshop@1
+    login_password: Roboshop@1
 
