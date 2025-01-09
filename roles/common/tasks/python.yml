@@ -1,0 +1,21 @@
+- name: Install python
+  ansible.builtin.dnf:
+    name:
+      - gcc
+      - python3
+      - python3-devel
+    state: latest
+
+- name: Run tasks from prereq
+  ansible.builtin.include_role:
+    name: common
+    tasks_from: prereq
+
+- name: Install specified python requirements
+  ansible.builtin.pip:
+    requirements: /app/requirements.txt
+
+- name: Run tasks from systemsetup
+  ansible.builtin.include_role:
+    name: common
+    tasks_from: systemsetup
