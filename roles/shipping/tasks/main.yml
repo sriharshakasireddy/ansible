@@ -13,7 +13,7 @@
     state: import
     name: all
     target: /app/db/schema.sql
-    local_host: 10.0.0.12
+    login_host: 10.0.0.12
     login_user: root
     login_password: roboshop@1
 
@@ -22,7 +22,7 @@
     state: import
     name: all
     target: /app/db/app-user.sql
-    local_host: 10.0.0.12
+    login_host: 10.0.0.12
     login_user: root
     login_password: roboshop@1
 
@@ -31,7 +31,7 @@
     state: import
     name: all
     target: /app/db/master-data.sql
-    local_host: 10.0.0.12
+    login_host: 10.0.0.12
     login_user: root
     login_password: roboshop@1
 
