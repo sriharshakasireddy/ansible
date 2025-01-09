@@ -17,6 +17,6 @@
 
 - name: Load Master data
   community.mongodb.mongodb_shell:
-    login_host: 10.0.0.8
+    login_host: 10.0.0.5
     file: "/app/db/master-data.js"
     idempotent: yes
