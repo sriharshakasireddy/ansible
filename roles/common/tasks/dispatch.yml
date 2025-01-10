@@ -9,6 +9,8 @@
 
 - name: Get dependencies
   command: go get
+  args:
+    chdir: /app
 
 - name: Build the Go project
   command: go build
