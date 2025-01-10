@@ -5,7 +5,7 @@
 
 
 - name: Initialize Go module
-  command: go mod init dispatch
+  command: go mod init {{ comp_name }}
   args:
     chdir: /app
 
