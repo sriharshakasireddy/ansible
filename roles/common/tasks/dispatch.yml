@@ -4,12 +4,14 @@
     state: latest
 
 
-- name: kk
-  ansible.builtin.shell:
-    go mod init {{ comp_name}}
-    go get
-    go build
+- name: Initialize Go module
+  command: go mod init dispatch
 
+- name: Get dependencies
+  command: go get
+
+- name: Build the Go project
+  command: go build
 
 - name: Run tasks from prereq
   ansible.builtin.include_role:
