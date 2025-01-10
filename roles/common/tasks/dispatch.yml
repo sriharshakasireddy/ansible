@@ -6,6 +6,8 @@
 
 - name: Initialize Go module
   command: go mod init dispatch
+  args:
+    chdir: /app
 
 - name: Get dependencies
   command: go get
