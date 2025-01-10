@@ -3,6 +3,10 @@
     name: golang
     state: latest
 
+- name: Run tasks from prereq
+  ansible.builtin.include_role:
+    name: common
+    tasks_from: prereq
 
 
 - name: kk
@@ -10,14 +14,10 @@
   args:
     chdir: /app
 
-- name: Run tasks from prereq
-  ansible.builtin.include_role:
-    name: common
-    tasks_from: prereq
 
 
 
-- name: Run tasks from prereq
+- name: Run tasks from systemsetup
   ansible.builtin.include_role:
     name: common
     tasks_from: systemsetup
