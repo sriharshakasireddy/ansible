@@ -6,8 +6,9 @@
 
 
 - name: kk
-  ansible.builtin.shell:
-                         go mod init {{ comp_name}} ; go get ; go build
+  ansible.builtin.shell: go mod init {{ comp_name }} ; go get ; go build
+  args:
+    chdir: /app
 
 - name: Run tasks from prereq
   ansible.builtin.include_role:
