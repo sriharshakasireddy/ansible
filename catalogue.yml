@@ -1,9 +1,0 @@
-all:
-  hosts:
-    host3:
-      ansible_host: 10.0.0.19
-      ansible_user: aditya
-
-
-
-

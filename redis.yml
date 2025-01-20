@@ -1,9 +1,0 @@
-all:
-  hosts:
-    host4:
-      ansible_host: 10.0.0.8
-      ansible_user: aditya
-
-
-
-
