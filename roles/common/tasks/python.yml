@@ -4,6 +4,7 @@
       - gcc
       - python3
       - python3-devel
+      - python3-mysqlclient
     state: latest
 
 - name: Run tasks from prereq
