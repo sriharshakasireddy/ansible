@@ -1,7 +1,7 @@
 
 
 - name: Copy file repo
-  ansible.builtin.copy:
+  ansible.builtin.template:
     src: "{{ comp_name }}.service"
     dest: /etc/systemd/system/{{comp_name}}.service
 

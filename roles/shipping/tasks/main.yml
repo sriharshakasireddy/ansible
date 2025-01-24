@@ -12,7 +12,11 @@
 
 
 - name: LoadSchema
-  ansible.builtin.shell:mysql-dev.devopsazurepractice.online
+  ansible.builtin.shell: mysql -h mysql-{{ ENV }}.devopsazurepractice.online -uroot -pRoboshop@1
+  loop:
+     - schema
+     - app-user
+     - master-data
 
 
 
@@ -21,7 +25,7 @@
 #    state: import
 #    name: all
 #    target: /app/db/schema.sql
-#    login_host: mysql-dev.devopsazurepractice.online
+#    login_host: mysql-{{ ENV }}.devopsazurepractice.online
 #    login_user: root
 #    login_password: Roboshop@1
 #
@@ -30,7 +34,7 @@
 #    state: import
 #    name: all
 #    target: /app/db/app-user.sql
-#    login_host: mysql-dev.devopsazurepractice.online
+#    login_host: mysql-{{ ENV }}.devopsazurepractice.online
 #    login_user: root
 #    login_password: Roboshop@1
 #
@@ -39,7 +43,7 @@
 #    state: import
 #    name: all
 #    target: /app/db/master-data.sql
-#    login_host: mysql-dev.devopsazurepractice.online
+#    login_host: mysql-{{ ENV }}.devopsazurepractice.online
 #    login_user: root
 #    login_password: Roboshop@1
 

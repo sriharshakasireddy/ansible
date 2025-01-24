@@ -5,7 +5,7 @@
 
 
 - name: Copy file repo
-  ansible.builtin.copy:
+  ansible.builtin.template:
     src: mongo.repo
     dest: /etc/yum.repos.d/mongo.repo
 
@@ -17,6 +17,6 @@
 
 - name: Load Master data
   community.mongodb.mongodb_shell:
-    login_host: mongodb-dev.devopsazurepractice.online
+    login_host: mongodb-{{ ENV }}.devopsazurepractice.online
     file: "/app/db/master-data.js"
     idempotent: yes
