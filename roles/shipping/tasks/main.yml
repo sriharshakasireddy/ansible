@@ -12,7 +12,7 @@
 
 
 - name: LoadSchema
-  ansible.builtin.shell: mysql -h mysql-dev.devopsazurepractice.online -uroot -pRoboshop@1 
+  ansible.builtin.shell: mysql -h mysql-dev.devopsazurepractice.online -uroot -pRoboShop@1 
   loop:
      - schema
      - app-user
@@ -27,7 +27,7 @@
 #    target: /app/db/schema.sql
 #    login_host: mysql-dev.devopsazurepractice.online
 #    login_user: root
-#    login_password: Roboshop@1
+#    login_password: RoboShop@1
 #
 #- name: Load app-user
 #  community.mysql.mysql_db:
@@ -36,7 +36,7 @@
 #    target: /app/db/app-user.sql
 #    login_host: mysql-dev.devopsazurepractice.online
 #    login_user: root
-#    login_password: Roboshop@1
+#    login_password: RoboShop@1
 #
 #- name: Load master-data
 #  community.mysql.mysql_db:
@@ -45,5 +45,5 @@
 #    target: /app/db/master-data.sql
 #    login_host: mysql-dev.devopsazurepractice.online
 #    login_user: root
-#    login_password: Roboshop@1
+#    login_password: RoboShop@1
 
