@@ -12,7 +12,7 @@
 
 
 - name: LoadSchema
-  ansible.builtin.shell: mysql -h mysql-dev.devopsazurepractice.online -uroot -pRoboShop@1 
+  ansible.builtin.shell: mysql -h mysql-dev.devopsazurepractice.online -uroot -pRoboShop@1 </app/db/{{ item }}.sql
   loop:
      - schema
      - app-user
