@@ -8,6 +8,7 @@
 - name: Reload
   ansible.builtin.systemd_service:
     name: "{{ comp_name}}"
+
     state: restarted
     enabled: true
     daemon_reload: true
