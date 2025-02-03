@@ -2,12 +2,12 @@
 
 - name: Copy file repo
   ansible.builtin.template:
-    src: "{{ comp_name }}.service"
-    dest: /etc/systemd/system/{{comp_name}}.service
+    src: "{{ app_name }}.service"
+    dest: /etc/systemd/system/{{app_name}}.service
 
 - name: Reload
   ansible.builtin.systemd_service:
-    name: "{{ comp_name}}"
+    name: "{{ app_name}}"
 
     state: restarted
     enabled: true
